@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:flowable-db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+      database: ${MONGODB_DATABASE}
+
+flowable:
+  check-process-definitions: true
+  process:
+    definition-location-prefix: classpath:/processes/
+  database-schema-update: true
+
+logging:
+  level:
+    org.flowable: INFO
